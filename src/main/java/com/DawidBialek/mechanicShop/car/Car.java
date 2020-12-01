@@ -15,8 +15,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(Long id, String make, String model) {
-        this.id = id;
+    public Car(String make, String model) {
         this.make = make;
         this.model = model;
     }
