@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-class LoadDatabase {
+class LoadEmployee {
 
-    private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
+    private static final Logger log = LoggerFactory.getLogger(LoadEmployee.class);
 
     @Bean
-    CommandLineRunner initDatabase(EmployeeRepository repository) {
+    CommandLineRunner loadEmployee(EmployeeRepository repository) {
 
         return args -> {
             log.info("Preloading " + repository.save(new Employee("Adam","Mickiewicz", "Mechanic", 2000.0)));
