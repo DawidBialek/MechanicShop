@@ -2,13 +2,15 @@ package com.DawidBialek.mechanicShop.employee;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-class Employee {
+public class Employee {
 
+    @Column(name="employee_id")
     private @Id @GeneratedValue Long id;
     private String firstName;
     private String lastName;

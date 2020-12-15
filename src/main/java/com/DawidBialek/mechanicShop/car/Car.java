@@ -1,5 +1,6 @@
 package com.DawidBialek.mechanicShop.car;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,6 +9,7 @@ import java.util.Objects;
 @Entity
 public class Car {
 
+    @Column(name="car_id")
     private @Id @GeneratedValue Long id;
     private String make;
     private String model;

@@ -1,8 +1,10 @@
 package com.DawidBialek.mechanicShop.order;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.DawidBialek.mechanicShop.car.Car;
+import com.DawidBialek.mechanicShop.customer.Customer;
+import com.DawidBialek.mechanicShop.employee.Employee;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -12,16 +14,22 @@ public class Order {
     private String name;
     private String description;
 
-    private Long employeeId;
-    private Long carId;
-    private Long customerId;
+    @OneToOne
+    @JoinColumn(name="employee_id")
+    private Employee employeeId;
+    @OneToOne
+    @JoinColumn(name="car_id")
+    private Car carId;
+    @OneToOne
+    @JoinColumn(name="customer_id")
+    private Customer customerId;
 
     private double price;
 
     public Order() {
     }
 
-    public Order(String name, String description, Long employeeId, Long carId, Long customerId, double price) {
+    public Order(String name, String description, Employee employeeId, Car carId, Customer customerId, double price) {
         this.name = name;
         this.description = description;
         this.employeeId = employeeId;
@@ -54,27 +62,27 @@ public class Order {
         this.description = description;
     }
 
-    public Long getEmployeeId() {
+    public Employee getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(Long employeeId) {
+    public void setEmployeeId(Employee employeeId) {
         this.employeeId = employeeId;
     }
 
-    public Long getCarId() {
+    public Car getCarId() {
         return carId;
     }
 
-    public void setCarId(Long carId) {
+    public void setCarId(Car carId) {
         this.carId = carId;
     }
 
-    public Long getCustomerId() {
+    public Customer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Long customerId) {
+    public void setCustomerId(Customer customerId) {
         this.customerId = customerId;
     }
 

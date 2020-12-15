@@ -11,12 +11,12 @@ public class LoadCustomer {
 
     private static final Logger log = LoggerFactory.getLogger(LoadCustomer.class);
 
-    @Bean
-    CommandLineRunner loadCustomer(CustomerRepository repository){
-
-        return args -> {
-            log.info("Preloading " + repository.save(new Customer("Joe","Smith", "Joe@gmail.com")));
-            log.info("Preloading " + repository.save(new Customer("Adam", "Ocean", "Adam@gmail.com")));
-        };
-    }
+//    @Bean
+//    CommandLineRunner loadCustomerTable(CustomerRepository repository){
+//
+//        return args -> {
+//            log.info("Preloading " + repository.save(new Customer("Joe","Smith", "Joe@gmail.com")));
+//            log.info("Preloading " + repository.save(new Customer("Adam", "Ocean", "Adam@gmail.com")));
+//        };
+//    }
 }

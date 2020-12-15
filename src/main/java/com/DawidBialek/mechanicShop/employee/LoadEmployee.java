@@ -11,12 +11,12 @@ class LoadEmployee {
 
     private static final Logger log = LoggerFactory.getLogger(LoadEmployee.class);
 
-    @Bean
-    CommandLineRunner loadEmployee(EmployeeRepository repository) {
-
-        return args -> {
-            log.info("Preloading " + repository.save(new Employee("Adam","Mickiewicz", "Mechanic", 2000.0)));
-            log.info("Preloading " + repository.save(new Employee("Tomasz", "Nowak", "Electrician", 2200.0)));
-        };
-    }
+//    @Bean
+//    CommandLineRunner loadEmployeeTable(EmployeeRepository repository) {
+//
+//        return args -> {
+//            log.info("Preloading " + repository.save(new Employee("Adam","Mickiewicz", "Mechanic", 2000.0)));
+//            log.info("Preloading " + repository.save(new Employee("Tomasz", "Nowak", "Electrician", 2200.0)));
+//        };
+//    }
 }

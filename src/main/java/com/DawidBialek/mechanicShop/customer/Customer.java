@@ -2,6 +2,7 @@ package com.DawidBialek.mechanicShop.customer;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
 
+    @Column(name="customer_id")
     private @Id @GeneratedValue Long id;
     private String firstName;
     private String lastName;
